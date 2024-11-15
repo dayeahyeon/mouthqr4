@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* 스크롤 방지 */
+        }
+
+        .full-screen-image {
+            width: 100vw; /* 뷰포트 너비에 맞춤 */
+            height: 100vh; /* 뷰포트 높이에 맞춤 */
+            object-fit: cover; /* 비율 유지하면서 화면을 채우기 위해 크기 조정 */
+        }
+
+        h1 {
+            mix-blend-mode:difference;
+            color: rgb(51, 255, 0);
+            position: absolute;
+            font-weight: 300;
+            top: 0;
+            font-size: 30px;
+            white-space: pre-wrap; /* 줄바꿈 유지 */
+            overflow: hidden; /* 텍스트 넘칠 때 감추기 */
+        }
+
+        h2{ mix-blend-mode:difference;
+            background-color: red;;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            font-weight: 700;
+            top:40%;
+            font-size: 30px;
+            white-space: pre-wrap; /* 줄바꿈 유지 */
+            overflow: hidden; /* 텍스트 넘칠 때 감추기 */
+        }
+    </style>
+</head>
+<body>
+    <img src="qr4.png" alt="QR 이미지" class="full-screen-image">
+    <h1 id="typingText">기계는 저 위에서, 그 뒤에서, 우리 사방에서 큰 소리로 킬킬거렸다. 그것은 킬킬거렸다. 나는 대부분 시간에 AM을 '그것'으로, 영혼 없는 물건으로 생각했다. 그러나 그 외 시간에는 남성형으로·· 아버지처럼.· 가부장처럼 여겼다. 그는 질투가 심하니 말이다. 그놈. 그것. 미쳐버린 아버지 신.</h1><br><h2 id="typingText">목요일로 이동하시오 X:2070 Y:1234</h2>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textElement = document.getElementById('typingText');
+            const text = textElement.textContent; // 전체 텍스트 가져오기
+            textElement.textContent = ''; // 텍스트 초기화
+            let index = 0;
+            const typingSpeed = 50; // 타이핑 속도 (밀리초)
+
+            function typeText() {
+                if (index < text.length) {
+                    textElement.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeText, typingSpeed);
+                }
+            }
+
+            typeText(); // 타이핑 시작
+        });
+    </script>
+</body>
+</html>
