@@ -3,66 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ar4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
     <style>
         body, html {
+            font-family: "Noto Sans KR", serif;
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* 스크롤 방지 */
-        }
-
-        .full-screen-image {
-            width: 100vw; /* 뷰포트 너비에 맞춤 */
-            height: 100vh; /* 뷰포트 높이에 맞춤 */
+            background:url(https://i.pinimg.com/736x/17/5d/f3/175df3ce5e8a3955fa0f5d3f66cb4904.jpg);
             object-fit: cover; /* 비율 유지하면서 화면을 채우기 위해 크기 조정 */
         }
 
+        
+
         h1 {
-            mix-blend-mode:difference;
-            color: rgb(51, 255, 0);
+           
+            color: rgb(255, 0, 0);
             position: absolute;
-            font-weight: 300;
+            font-weight: 900;
             top: 0;
-            font-size: 30px;
-            white-space: pre-wrap; /* 줄바꿈 유지 */
+            font-size: 55px;
+            word-break: keep-all;
             overflow: hidden; /* 텍스트 넘칠 때 감추기 */
         }
 
-        h2{ mix-blend-mode:difference;
-            background-color: red;;
-            color: rgb(255, 255, 255);
-            position: absolute;
-            font-weight: 700;
-            top:60%;
-            font-size: 30px;
-            white-space: pre-wrap; /* 줄바꿈 유지 */
-            overflow: hidden; /* 텍스트 넘칠 때 감추기 */
-        }
+        h2{background-color:rgb(0, 0, 0); padding:8px 10px 8px 10px; color:rgb(31, 186, 19); font-size:13px; top:700px; font-family:'NotoSerifKR';position:absolute; left: 50%;
+        transform: translate(-50%, -50%);text-align: center;position:fixed;}
     </style>
 </head>
 <body>
-    <img src="qr4.png" alt="QR 이미지" class="full-screen-image">
-    <h1 id="typingText">기계는 저 위에서, 그 뒤에서, 우리 사방에서 큰 소리로 킬킬거렸다. 그것은 킬킬거렸다. 나는 대부분 시간에 AM을 '그것'으로, 영혼 없는 물건으로 생각했다. 그러나 그 외 시간에는 남성형으로·· 아버지처럼.· 가부장처럼 여겼다. 그는 질투가 심하니 말이다. 그놈. 그것. 미쳐버린 아버지 신.</h1><br><h2 id="typingText">목요일로 이동하시오 X:2070 Y:1234</h2>
+    <h1 id="typingText">기계는 저 위에서, 그 뒤에서, 우리 사방에서 큰 소리로 킬킬거렸다. 그것은 킬킬거렸다. 나는 대부분 시간에 AM을 '그것'으로, 영혼 없는 물건으로 생각했다. 그러나 그 외 시간에는 남성형으로··· 아버지처럼··· 가부장처럼··· 여겼다. 그는 질투가 심하니 말이다. 그놈. 그것. 미쳐버린 아버지 신.</h1><br><h2 id="typingText">2070, 1234로 이동하시오</h2>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const textElement = document.getElementById('typingText');
-            const text = textElement.textContent; // 전체 텍스트 가져오기
-            textElement.textContent = ''; // 텍스트 초기화
-            let index = 0;
-            const typingSpeed = 50; // 타이핑 속도 (밀리초)
 
-            function typeText() {
-                if (index < text.length) {
-                    textElement.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeText, typingSpeed);
-                }
-            }
-
-            typeText(); // 타이핑 시작
-        });
-    </script>
 </body>
 </html>
